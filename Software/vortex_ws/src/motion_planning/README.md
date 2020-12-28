@@ -1,4 +1,4 @@
-# motion planning and control module package
+# motion planning package
 
 ## description
 
@@ -74,8 +74,6 @@ To build from source, clone the latest version from this repository into your  w
  
      
 
-* **...**
-
 ## Nodes
 
 
@@ -95,12 +93,12 @@ To build from source, clone the latest version from this repository into your  w
 #### Parameters
 ....
 
-local_SLAM      :generates a series of poses and submaps by scan matching and using a motion filter .
+local_SLAM  node    :generates a series of poses and submaps by scan matching and using a motion filter .
 #### Subscribed Topics
-estimated_pose‏
+* estimated_pose‏
 
 #### Published Topics
-submaps
+* submaps
 #### Services
 
 ...
@@ -109,12 +107,12 @@ submaps
 ...
 
 
-global_SlAM     : updates the poses/states from the Local SLAM system and then updates the submaps and create a Global 3D map .
+global_SlAM node  : updates the poses/states from the Local SLAM system and then updates the submaps and create a Global 3D map .
 
 #### Subscribed Topics
-submaps
+* submaps
 #### Published Topics
-Global_3D_map‏
+* Global_3D_map
 
 #### Services
 ...
@@ -123,13 +121,13 @@ Global_3D_map‏
 #### Parameters
 ...
 
-searching_algorthim :it is an algorithm used for estimating the best path from starting point to goal point and also validates the generated path(validation rate ).
+searching_algorthim node:it is an algorithm used for estimating the best path from starting point to goal point and also validates the generated path(validation rate ).
 
 #### Subscribed Topics
 
 
 #### Published Topics
-initial_path
+* initial_path
 
 #### Services
 
@@ -138,12 +136,12 @@ initial_path
 #### Parameters
 ...
 
-path_smoothing: Draws curved turns instead of sharp turns‏ by using a smoothing algorthim and the AUV's local pose.
+path_smoothing node : Draws curved turns instead of sharp turns‏ by using a smoothing algorthim and the AUV's local pose.
 
 #### Subscribed Topics
-initial_path
+* initial_path
 #### Published Topics
- smoothed_path‏
+* smoothed_path‏
  
 #### Services
 ....
@@ -151,7 +149,7 @@ initial_path
 #### Parameters
 ...
 
-obstacle_detection  :
+* obstacle_detection node  :
 #### Subscribed Topics
 
 #### Published Topics
